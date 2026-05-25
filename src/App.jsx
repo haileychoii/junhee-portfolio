@@ -71,10 +71,13 @@ function HomePage() {
             <h2>Contact / 연락</h2>
           </div>
 
-          <div className="contactBox">
-            <p>Let’s connect</p>
-            <a href="mailto:jenny876517@gmail.com">jenny876517@gmail.com</a>
-          </div>
+          <a
+            className="contactBox"
+            href="mailto:jenny876517@gmail.com?subject=Portfolio%20Contact%20-%20Junhee%20Choi&body=Hello%20Junhee,%0D%0A%0D%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20connect.%0D%0A"
+          >
+            <span>Let’s connect</span>
+            <strong>jenny876517@gmail.com</strong>
+          </a>
         </section>
       </main>
     </>
