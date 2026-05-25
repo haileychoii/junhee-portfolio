@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import Card from './components/Card'
 import DetailPage from './pages/DetailPage'
+import ResumeButton from './components/ResumeButton'
 
 import { experiences, projects, skills } from './data'
 
@@ -20,7 +21,8 @@ function HomePage() {
         <section className="quickLinks" aria-label="Quick links">
           <a href="#experience">Experience ↗</a>
           <a href="#projects">Projects ↗</a>
-          <a href="#skills">Skills ↗</a>
+          {/* <a href="#skills">Skills ↗</a> */}
+          <ResumeButton />
           <a href="#contact">Contact ↗</a>
         </section>
 
