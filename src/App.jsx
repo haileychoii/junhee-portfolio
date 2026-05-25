@@ -53,11 +53,7 @@ function HomePage() {
           </div>
         </section>
 
-        <section id="skills" className="section">
-          <div className="sectionHeader">
-            <p>03</p>
-            <h2>Skills / 역량</h2>
-          </div>
+        
 
           <section id="skills" className="section">
             <div className="sectionHeader">
@@ -65,8 +61,8 @@ function HomePage() {
               <h2>Skills / 역량</h2>
             </div>
 
-  <SkillSection skills={skills} />
-</section>
+            <SkillSection skills={skills} />
+          </section>
 
         <section id="contact" className="section contact">
           <div className="sectionHeader">
