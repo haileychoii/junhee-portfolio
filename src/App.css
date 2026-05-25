@@ -943,6 +943,21 @@ h2 {
     width: 100%;
     text-align: center;
   }
+
+  
+  .easterOverlay {
+    padding: 16px;
+  }
+
+  .easterModal {
+    border-radius: 22px;
+    padding: 38px 22px 28px;
+  }
+
+  .easterModal p:not(.eyebrow) {
+    font-size: 16px;
+  }
+
 }
 
 /* .resumeButton {
@@ -1064,4 +1079,73 @@ h2 {
 .pdfActions a:hover {
   background: var(--pink);
   box-shadow: 4px 4px 0 #111;
+}
+
+.easterOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  padding: 24px;
+  background: rgba(17, 17, 17, 0.42);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.easterModal {
+  position: relative;
+  width: min(560px, 100%);
+  border: 2px solid var(--line);
+  border-radius: 28px;
+  padding: 42px 32px;
+  background: var(--pink);
+  box-shadow: 10px 10px 0 #111;
+  text-align: center;
+}
+
+.easterModal h2 {
+  margin: 0 0 20px;
+  font-size: clamp(42px, 7vw, 72px);
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+}
+
+.easterModal p:not(.eyebrow) {
+  max-width: 420px;
+  margin: 0 auto 22px;
+  font-size: 18px;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+.easterModal span {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  font-weight: 900;
+  box-shadow: 4px 4px 0 #111;
+}
+
+.easterClose {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  background: var(--card);
+  font-size: 26px;
+  font-weight: 900;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.easterClose:hover {
+  background: var(--bg);
+  transform: rotate(8deg);
 }
