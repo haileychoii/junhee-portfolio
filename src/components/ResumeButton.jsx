@@ -8,8 +8,7 @@ function ResumeButton() {
   return (
     <>
       <button className="resumeButton" type="button" onClick={() => setIsOpen(true)}>
-        <span className="tooltip">Resume / CV 보기</span>
-        Resume ↗
+            Resume ↗
       </button>
 
       {isOpen && (

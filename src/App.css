@@ -166,10 +166,44 @@ h1 {
   background: var(--card);
 }
 
-.quickLinks a {
+.quickLinks a,
+.resumeButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 80px;
   padding: 18px;
+
+  border: none;
   border-right: 2px solid var(--line);
-  font-weight: 800;
+  background: var(--card);
+  color: var(--text);
+
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.quickLinks a:hover,
+.resumeButton:hover {
+  background: var(--pink);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 0 #111;
+}
+
+.quickLinks a:active,
+.resumeButton:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #111;
 }
 
 .quickLinks a:last-child {
@@ -291,13 +325,19 @@ h2 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .quickLinks a:nth-child(2) {
+  .quickLinks > * {
+    border-right: 2px solid var(--line);
+    border-bottom: 2px solid var(--line);
+  }
+
+  .quickLinks > *:nth-child(2),
+  .quickLinks > *:nth-child(4) {
     border-right: none;
   }
 
-  .quickLinks a:nth-child(1),
-  .quickLinks a:nth-child(2) {
-    border-bottom: 2px solid var(--line);
+  .quickLinks > *:nth-child(3),
+  .quickLinks > *:nth-child(4) {
+    border-bottom: none;
   }
 
   .grid {
@@ -364,6 +404,30 @@ h2 {
 
   .quickLinks {
     grid-template-columns: 1fr;
+  }
+
+  .quickLinks > * {
+    min-height: 62px;
+    border-right: none;
+    border-bottom: 2px solid var(--line);
+    font-size: 17px;
+  }
+
+  .quickLinks > *:last-child {
+    border-bottom: none;
+  }
+
+  .quickLinks a:hover,
+  .resumeButton:hover {
+    transform: none;
+    box-shadow: none;
+    background: var(--pink);
+  }
+
+  .quickLinks a:active,
+  .resumeButton:active {
+    transform: translateY(2px);
+    box-shadow: inset 0 3px 0 #111;
   }
 
   .contactBox {
@@ -789,10 +853,7 @@ h2 {
     border-bottom: 2px solid var(--line);
   }
 
-  .tooltip {
-    display: none;
-  }
-
+  
   .modalOverlay {
     padding: 12px;
   }
@@ -820,7 +881,7 @@ h2 {
   }
 }
 
-.resumeButton {
+/* .resumeButton {
   position: relative;
   width: 100%;
   border: none;
@@ -835,7 +896,7 @@ h2 {
   transition:
     background-color 180ms ease,
     transform 180ms ease;
-}
+} */
 
 .resumeButton:hover {
   background: var(--pink);
@@ -846,46 +907,10 @@ h2 {
   transform: translateY(2px);
 }
 
-.tooltip {
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 12px);
-  transform: translateX(-50%) translateY(6px);
-  opacity: 0;
-  pointer-events: none;
 
-  min-width: 140px;
-  padding: 10px 12px;
-  border: 2px solid var(--line);
-  border-radius: 999px;
-  background: var(--pink);
-  box-shadow: 4px 4px 0 #111;
-  font-size: 13px;
-  font-weight: 900;
-  white-space: nowrap;
 
-  transition:
-    opacity 160ms ease,
-    transform 160ms ease;
-}
 
-.tooltip::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 100%;
-  width: 10px;
-  height: 10px;
-  background: var(--pink);
-  border-right: 2px solid var(--line);
-  border-bottom: 2px solid var(--line);
-  transform: translateX(-50%) rotate(45deg);
-}
 
-.resumeButton:hover .tooltip {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
 
 .modalOverlay {
   position: fixed;
