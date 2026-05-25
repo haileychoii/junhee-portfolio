@@ -266,18 +266,72 @@ h2 {
   line-height: 1.7;
 }
 
+.skillArea {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 20px;
+  align-items: start;
+}
+
 .skillList {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-.skillList span {
+.skillChip {
   padding: 12px 16px;
   border: 2px solid var(--line);
   border-radius: 999px;
   background: var(--card);
-  font-weight: 800;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 900;
+  cursor: pointer;
+
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.skillChip:hover {
+  background: var(--pink);
+  transform: translateY(-3px);
+  box-shadow: 4px 4px 0 #111;
+}
+
+.skillChip:active {
+  transform: translateY(1px);
+  box-shadow: 2px 2px 0 #111;
+}
+
+.skillChip.active {
+  background: var(--pink);
+  box-shadow: 4px 4px 0 #111;
+}
+
+.skillDescription {
+  border: 2px solid var(--line);
+  border-radius: 26px;
+  padding: 28px;
+  background: var(--card);
+  box-shadow: 6px 6px 0 var(--pink);
+}
+
+.skillDescription h3 {
+  margin: 0 0 16px;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.skillDescription p:not(.eyebrow) {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--muted);
 }
 
 .contact {
@@ -392,6 +446,10 @@ h2 {
   .grid {
     grid-template-columns: 1fr;
   }
+
+  .skillArea {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* mobile */
@@ -450,6 +508,30 @@ h2 {
   .heroPanel span {
     font-size: 14px;
   }
+  
+  .skillArea {
+    grid-template-columns: 1fr;
+  }
+
+  .skillChip {
+    font-size: 15px;
+    padding: 11px 14px;
+  }
+
+  .skillDescription {
+    border-radius: 22px;
+    padding: 22px;
+  }
+
+  .skillDescription h3 {
+    font-size: 32px;
+  }
+
+  .skillDescription p:not(.eyebrow) {
+    font-size: 16px;
+  }
+
+
 
   .quickLinks {
     grid-template-columns: 1fr;

@@ -7,6 +7,7 @@ import Hero from './components/Hero'
 import Card from './components/Card'
 import DetailPage from './pages/DetailPage'
 import ResumeButton from './components/ResumeButton'
+import SkillSection from './components/SkillSection'
 
 import { experiences, projects, skills } from './data'
 
@@ -58,12 +59,14 @@ function HomePage() {
             <h2>Skills / 역량</h2>
           </div>
 
-          <div className="skillList">
-            {skills.map((skill) => (
-              <span key={skill}>{skill}</span>
-            ))}
-          </div>
-        </section>
+          <section id="skills" className="section">
+            <div className="sectionHeader">
+              <p>03</p>
+              <h2>Skills / 역량</h2>
+            </div>
+
+  <SkillSection skills={skills} />
+</section>
 
         <section id="contact" className="section contact">
           <div className="sectionHeader">

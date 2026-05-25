@@ -68,14 +68,46 @@ export const projects = [
 ]
 
 export const skills = [
-  'IFRS17',
-  'Actuarial Valuation',
-  'Reinsurance',
-  'Excel / VBA',
-  'Python',
-  'SQL',
-  'Data Analysis',
-  'Prompt Engineering',
+  {
+    name: 'IFRS17',
+    description:
+      'I see IFRS17 as a system of assumptions, cash flows, insurance liabilities, and risk.',
+  },
+  {
+    name: 'Actuarial Valuation',
+    description:
+      'I am interested in connecting actuarial logic with actual business and reporting processes.',
+  },
+  {
+    name: 'Reinsurance',
+    description:
+      'I want to understand how treaties, cash flows, and risk transfer work behind insurance business.',
+  },
+  {
+    name: 'Excel / VBA',
+    description:
+      'My practical tool for validating large data, automating repetitive checks, and reducing manual errors.',
+  },
+  {
+    name: 'Python',
+    description:
+      'I use Python to clean, analyze, and model data when Excel alone is not enough.',
+  },
+  {
+    name: 'SQL',
+    description:
+      'I use SQL to think in tables, conditions, joins, and structured data extraction.',
+  },
+  {
+    name: 'Data Analysis',
+    description:
+      'For me, data analysis means finding patterns, checking assumptions, and turning raw numbers into decisions.',
+  },
+  {
+    name: 'Prompt Engineering',
+    description:
+      'I use prompts to structure vague ideas, improve document analysis, and design repeatable thinking flows.',
+  },
 ]
 
 export const allItems = [...experiences, ...projects]
