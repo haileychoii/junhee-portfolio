@@ -285,6 +285,7 @@ h2 {
 }
 
 .contactBox {
+  position: relative;
   border: 2px solid var(--line);
   border-radius: 28px;
   padding: 42px 28px;
@@ -315,7 +316,7 @@ h2 {
   box-shadow: 3px 3px 0 #111111;
 }
 
-.contactBox span {
+.contactBox > span:not(.contactHoverLabel) {
   margin: 0;
   font-size: clamp(24px, 3vw, 36px);
   line-height: 1.1;
@@ -331,6 +332,36 @@ h2 {
   font-weight: 900;
   letter-spacing: -0.04em;
   word-break: break-word;
+}
+
+.contactHoverLabel {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+
+  padding: 8px 12px;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  box-shadow: 4px 4px 0 #111;
+
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.contactBox:hover .contactHoverLabel {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* tablet */
@@ -465,13 +496,16 @@ h2 {
     box-shadow: inset 0 3px 0 #111111;
   }
 
-  .contactBox span {
-    font-size: 24px;
+  .contactBox > span:not(.contactHoverLabel) {
+  font-size: 24px;
   }
-
   .contactBox strong {
     font-size: clamp(20px, 7vw, 30px);
     letter-spacing: -0.03em;
+  }
+
+  .contactHoverLabel {
+  display: none;
   }
 
 
