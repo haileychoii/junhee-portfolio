@@ -1,41 +1,28 @@
-import { useState } from 'react'
-import { navItems } from '../data'
-import EasterEgg from './EasterEgg'
+import { navItems, socialLinks } from '../data'
 
 function Header() {
-  const [clickCount, setClickCount] = useState(0)
-  const [isEggOpen, setIsEggOpen] = useState(false)
-
-  const handleLogoClick = (event) => {
-    event.preventDefault()
-
-    const nextCount = clickCount + 1
-    setClickCount(nextCount)
-
-    if (nextCount >= 5) {
-      setIsEggOpen(true)
-      setClickCount(0)
-    }
-  }
-
   return (
-    <>
-      <header className="header">
-        <a className="logo" href="#" onClick={handleLogoClick}>
-          J.CAREER ARCHIVE
-        </a>
+    <header className="header">
+      <a className="logo" href="#">
+        JUNHEE ARCHIVE
+      </a>
 
-        <nav className="nav">
-          {navItems.map((item) => (
-            <a key={item.href} href={item.href}>
-              {item.label}
-            </a>
-          ))}
-        </nav>
-      </header>
+      <nav className="nav">
+        {navItems.map((item) => (
+          <a key={item.href} href={item.href}>
+            {item.label}
+          </a>
+        ))}
+      </nav>
 
-      <EasterEgg isOpen={isEggOpen} onClose={() => setIsEggOpen(false)} />
-    </>
+      <div className="headerSocials">
+        {socialLinks.map((link) => (
+          <a key={link.label} href={link.href} target="_blank" rel="noreferrer" aria-label={link.label}>
+            {link.icon}
+          </a>
+        ))}
+      </div>
+    </header>
   )
 }
 
