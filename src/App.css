@@ -418,6 +418,60 @@ h2 {
   transform: translateY(0);
 }
 
+.headerSocials {
+  display: flex;
+  gap: 10px;
+}
+
+.headerSocials a,
+.footerLinks a span {
+  width: 34px;
+  height: 34px;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  background: var(--card);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  box-shadow: 3px 3px 0 var(--pink);
+}
+
+.headerSocials a:hover,
+.footerLinks a:hover span {
+  background: var(--pink);
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 #111;
+}
+
+.footer {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  border-top: 2px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer p {
+  margin: 0;
+  font-weight: 900;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.footerLinks a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 900;
+}
+
 /* tablet */
 @media (max-width: 900px) {
   .hero {
@@ -1230,4 +1284,16 @@ h2 {
 .easterClose:hover {
   background: var(--bg);
   transform: rotate(8deg);
+}
+
+@media (max-width: 640px) {
+  .headerSocials {
+    justify-content: center;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
