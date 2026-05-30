@@ -111,3 +111,16 @@ export const skills = [
 ]
 
 export const allItems = [...experiences, ...projects]
+
+export const socialLinks = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/junheechoi1103',
+    icon: 'in',
+  },
+  {
+    label: 'Email',
+    href: 'mailto:jenny876517@gmail.com',
+    icon: '@',
+  },
+]
