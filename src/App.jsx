@@ -11,6 +11,8 @@ import SkillSection from './components/SkillSection'
 
 import { experiences, projects, skills } from './data'
 
+import Footer from './components/Footer'
+
 function HomePage() {
   return (
     <>
@@ -80,6 +82,7 @@ function HomePage() {
           </a>
         </section>
       </main>
+      <Footer />
     </>
   )
 }
