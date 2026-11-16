@@ -24,9 +24,11 @@ function Hero() {
       </div>
 
       <div className="heroPanel">
-        <p>Currently</p>
-        <strong>IFRS17 Intern</strong>
-        <span>RGA Reinsurance Korea · Valuation</span>
+        {/* 완료된 가장 최근 경력을 표시하므로 현재 재직 중이라는 표현은 사용하지 않습니다. */}
+        {/* This panel shows the most recently completed role, not a current position. */}
+        <p>Most Recent Experience</p>
+        <strong>IFRS17 Valuation</strong>
+        <span>RGA Reinsurance Korea · May 11 – Nov 10, 2026</span>
       </div>
     </section>
   )

@@ -8,8 +8,15 @@ function Header() {
       </a>
 
       <nav className="nav">
+        {/* src/data.jsx에서 external로 표시한 외부 메뉴만 새 탭으로 엽니다. */}
+        {/* Only navigation items marked external in src/data.jsx open in a new tab. */}
         {navItems.map((item) => (
-          <a key={item.href} href={item.href}>
+          <a
+            key={item.href}
+            href={item.href}
+            target={item.external ? '_blank' : undefined}
+            rel={item.external ? 'noreferrer' : undefined}
+          >
             {item.label}
           </a>
         ))}
