@@ -84,17 +84,10 @@ export const projects = [
     subtitle: 'React · TypeScript · Vite · Tauri',
     ko: '일정, 커리어, 학습, 메모와 생활 기록을 위젯으로 모아 관리하는 개인용 대시보드를 기획하고 개발하고 있습니다.',
     en: 'Building a personal dashboard that brings planning, career, study, notes, and daily life into customizable widgets.',
-    // The real app captures are stored in public/projects/glassday and referenced here.
-    // 실제 GlassDay 앱 화면은 public/projects/glassday에 두고, 이 목록에서 상세 갤러리로 연결합니다.
+    // The mobile app capture and original widget icons are stored under public/projects/glassday.
+    // GlassDay 모바일 화면과 원본 위젯 아이콘은 public/projects/glassday 아래에서 상세 페이지로 연결합니다.
     mediaHeading: 'GlassDay in use / 실제 화면',
     media: [
-      {
-        type: 'image',
-        src: '/projects/glassday/tablet-dashboard.png',
-        alt: 'GlassDay 대시보드의 태블릿 와이드 화면. Today Focus, Alert Center, Calendar와 Daily Journal 위젯이 배치되어 있습니다.',
-        caption: '태블릿 와이드 레이아웃 · 여러 위젯을 한 화면에서 조합',
-        label: 'TABLET · 768px',
-      },
       {
         type: 'image',
         src: '/projects/glassday/mobile-dashboard.png',
@@ -102,6 +95,13 @@ export const projects = [
         caption: '모바일 레이아웃 · 작은 화면에 맞춰 위젯을 세로로 재배치',
         label: 'MOBILE · 390px',
       },
+    ],
+    widgetVisuals: [
+      { name: 'Today Focus', src: '/projects/glassday/widgets/today.png' },
+      { name: 'Calendar', src: '/projects/glassday/widgets/calendar.png' },
+      { name: 'Career', src: '/projects/glassday/widgets/career.png' },
+      { name: 'Daily Journal', src: '/projects/glassday/widgets/diary.png' },
+      { name: 'Study Planner', src: '/projects/glassday/widgets/study.png' },
     ],
     details: [
       'Today Focus, Calendar, Career, Study Planner, Timer, Memo, Daily Journal, Health, Money, Mood, Alert Center 등 11개 위젯을 하나의 대시보드에서 조합하도록 구성했습니다.',

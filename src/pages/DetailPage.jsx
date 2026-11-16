@@ -34,6 +34,19 @@ function MediaGallery({ item }) {
           </figure>
         ))}
       </div>
+      {item.widgetVisuals?.length > 0 && (
+        <div className="widgetVisuals" aria-label="GlassDay 위젯 종류">
+          <p className="widgetVisualsTitle">A few of 11 widgets / 11개 위젯 중 일부</p>
+          <div className="widgetVisualsGrid">
+            {item.widgetVisuals.map((widget) => (
+              <div className="widgetVisual" key={widget.name}>
+                <img src={widget.src} alt="" loading="lazy" />
+                <span>{widget.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   )
 }

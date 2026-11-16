@@ -783,16 +783,22 @@ h2 {
 .mediaFigureVideo { grid-column: 1 / -1; }
 .mediaFigureVideo .mediaFrame { background: #151515; }
 .mediaFigureVideo video { display: block; width: 100%; max-height: 620px; aspect-ratio: 16 / 9; object-fit: contain; }
-.detailMedia-glassday .mediaGrid { grid-template-columns: minmax(0, 1.55fr) minmax(220px, .65fr); align-items: start; }
+.detailMedia-glassday .mediaGrid { grid-template-columns: minmax(280px, 470px); justify-content: center; }
 .detailMedia-glassday .mediaImageLink { min-height: 0; }
-.detailMedia-glassday .mediaImageLink img { height: auto; max-height: 620px; object-fit: contain; }
-.detailMedia-glassday .mediaFigure:nth-child(2) .mediaFrame { background: linear-gradient(145deg, #e7d4e7, #c8d4d6); }
+.detailMedia-glassday .mediaImageLink img { height: auto; max-height: 720px; object-fit: contain; }
+.widgetVisuals { margin-top: 28px; padding-top: 20px; border-top: 1px solid #ddd6d0; }
+.widgetVisualsTitle { margin-bottom: 12px; color: #554b4b; font-size: 13px; font-weight: 800; }
+.widgetVisualsGrid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.widgetVisual { min-height: 116px; padding: 14px 8px 10px; border: 1px solid #e1dbd5; border-radius: 10px; background: #fffdfa; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; }
+.widgetVisual img { width: 56px; height: 56px; object-fit: contain; image-rendering: pixelated; }
+.widgetVisual span { color: #514a47; font-size: 11px; font-weight: 800; line-height: 1.35; }
 .detailMedia-procureflow-ax .mediaGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .detailMedia-procureflow-ax .mediaFigureVideo { grid-column: 1 / -1; }
 
 @media (max-width: 760px) {
   .detailMedia { padding-top: 38px; }
   .mediaGrid, .detailMedia-glassday .mediaGrid, .detailMedia-procureflow-ax .mediaGrid { grid-template-columns: 1fr; }
+  .widgetVisualsGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .mediaFigureVideo { grid-column: auto; }
   .mediaImageLink img, .detailMedia-glassday .mediaImageLink img { height: auto; max-height: 620px; object-fit: contain; }
   .detailMedia .detailSectionHeading h2 { max-width: 100%; }
