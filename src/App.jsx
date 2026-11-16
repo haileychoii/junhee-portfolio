@@ -1,7 +1,7 @@
 import './App.css'
 
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import { useLayoutEffect } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -18,9 +18,25 @@ import Footer from './components/Footer'
 // Reset scroll on route changes so a new detail page always opens at its beginning.
 function ScrollToTop() {
   const { pathname } = useLocation()
+  const scrollPositions = useRef(new Map())
 
   useLayoutEffect(() => {
-    window.scrollTo(0, 0)
+    // 상세 페이지로 갈 때는 새 경로를 위에서 열고, 방문했던 경로로 돌아오면 읽던 위치를 복원합니다.
+    // Start a new route at the top, then restore its saved position when the visitor returns.
+    const savedPosition = scrollPositions.current.get(pathname)
+    window.scrollTo(0, savedPosition ?? 0)
+
+    const rememberPosition = () => {
+      scrollPositions.current.set(pathname, window.scrollY)
+    }
+    window.addEventListener('scroll', rememberPosition, { passive: true })
+
+    return () => {
+      // 경로가 바뀌는 순간 마지막 위치를 저장해, 목록으로 돌아왔을 때 같은 자리를 보여줍니다.
+      // Save the final position before leaving so returning restores the same place in the list.
+      scrollPositions.current.set(pathname, window.scrollY)
+      window.removeEventListener('scroll', rememberPosition)
+    }
   }, [pathname])
 
   return null
