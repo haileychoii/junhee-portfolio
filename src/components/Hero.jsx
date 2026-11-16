@@ -11,13 +11,13 @@ function Hero() {
         </h1>
 
         <p className="introKo">
-            숫자의 차이를 원천까지 추적하고,
+            보험의 위험을 데이터로 해석하고,
             <br />
-            다음 판단이 보이게 정리합니다.
+            믿을 수 있는 판단으로 연결합니다.
         </p>
 
         <p className="introEn">
-            I trace results back to their source and make the next decision clearer.
+            I turn actuarial and insurance data into decisions people can trust.
         </p>
       </div>
 

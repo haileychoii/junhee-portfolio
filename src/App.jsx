@@ -93,17 +93,17 @@ function HomePage() {
             Introduce the working style that connects the experience and project sections. */}
         <section id="about" className="aboutSection" aria-labelledby="about-title">
           <div className="aboutHeading">
-            <p className="eyebrow">WHO I AM / 나를 소개합니다</p>
-            <h2 id="about-title">정확하게 확인하고,<br />이해하기 쉽게 전하는 사람</h2>
+            <p className="eyebrow">CAREER DIRECTION / 산업 관심과 성장 방향</p>
+            <h2 id="about-title">보험의 불확실성을<br />신뢰할 수 있는 판단으로 바꾸고 싶습니다.</h2>
           </div>
           <div className="aboutStory">
-            <p>저는 결과값을 그대로 받아들이기보다, 어디서 차이가 생겼는지 먼저 확인합니다. RGA와 써미트에서는 원천 데이터와 상품 기준, 산식을 따라가며 수치를 검증했고, GlassDay와 ProcureFlow AX에서는 복잡한 정보와 업무 흐름이 실제 화면에서 보이도록 구조화했습니다.</p>
-            <p>정확한 분석이 이해하기 쉬운 설명과 다음 행동으로 이어질 때 더 큰 가치를 만든다고 생각합니다. 근거를 꼼꼼히 확인하고, 동료가 안심하고 이어서 활용할 수 있게 정리하는 것이 제 일하는 방식입니다.</p>
+            <p>보험은 계약과 경험 데이터를 바탕으로 불확실한 위험을 보험료·준비금·재보험 구조로 다루는 산업입니다. 저는 가정이나 데이터의 작은 차이가 보험사의 손익과 리스크 판단에 어떻게 이어지는지 이해하는 데 관심이 있습니다. 그래서 결과 숫자뿐 아니라, 그 뒤의 원천 데이터와 산출 기준까지 확인해 왔습니다.</p>
+            <p>써미트 계리법인과 RGA에서 쌓은 검증 경험을 바탕으로 IFRS17·재보험·경험통계를 더 깊게 다루고, 디지털 보험과 AI가 확장되는 환경에서도 결과를 설명하고 신뢰를 뒷받침할 수 있는 실무형 보험계리·리스크 분석가로 성장하고 싶습니다.</p>
           </div>
-          <div className="workPrinciples">
-            <article><span>01 / TRACE</span><h3>차이의 원인을 추적</h3><p>원천 데이터와 산출 기준을 대사해 숫자가 달라진 이유를 찾습니다.</p></article>
-            <article><span>02 / STRUCTURE</span><h3>복잡한 일을 구조화</h3><p>업무를 기준·단계·예외로 나누어 검토 흐름을 정리합니다.</p></article>
-            <article><span>03 / COMMUNICATE</span><h3>다음 행동이 보이게 전달</h3><p>결과와 근거를 다른 사람이 이해하고 이어서 활용할 수 있게 표현합니다.</p></article>
+          <div className="careerArc" aria-label="산업 관심, 경험, 진로 방향">
+            <article><span>01 / WHY INSURANCE</span><h3>위험을 숫자로 읽는 산업</h3><p>보험 계약·경험 데이터가 가격과 준비금, 리스크 판단으로 연결되는 과정에 관심이 있습니다.</p></article>
+            <article><span>02 / WHAT I BUILD ON</span><h3>계리 검증과 데이터 분석</h3><p>167,598건 준비금 검증과 IFRS17 결산 데이터 검토를 통해 원천·가정·결과를 대사했습니다.</p></article>
+            <article><span>03 / WHERE I’M GOING</span><h3>설명 가능한 계리·리스크 전문성</h3><p>디지털 보험과 AI 활용에서도 결과의 근거와 책임을 이해하는 실무형 계리 전문가를 지향합니다.</p></article>
           </div>
         </section>
 
