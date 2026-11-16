@@ -1458,3 +1458,135 @@ h2 {
     text-align: center;
   }
 }
+
+/* 경험 아카이브는 글을 담은 카드 대신, 날짜와 제목이 정렬된 편집형 목록으로 보여줍니다.
+   Replace text-heavy cards with a scannable editorial archive row. */
+.grid { display: block; border-top: 1px solid #bcb5ae; }
+.archiveRow {
+  position: relative; display: grid; grid-template-columns: 54px minmax(130px, .7fr) minmax(220px, 1.25fr) minmax(220px, 1fr) 30px;
+  align-items: center; gap: 18px; min-height: 132px; padding: 22px 8px; border-bottom: 1px solid #cfc8c2;
+  transition: background-color 180ms ease, padding 180ms ease; text-decoration: none; color: inherit;
+}
+.archiveRow:hover { padding-right: 18px; padding-left: 18px; background: #fffdfa; }
+.archiveIndex { color: #a35978; font-size: 14px; font-weight: 900; font-variant-numeric: tabular-nums; }
+.archiveDate { color: #736b66; font-size: 12px; font-weight: 750; line-height: 1.5; }
+.archiveCopy h3 { margin: 0 0 5px; font-size: clamp(20px, 2.1vw, 28px); line-height: 1.12; letter-spacing: -.045em; }
+.archiveCopy p, .archiveSummary { margin: 0; color: #625a55; font-size: 13px; line-height: 1.55; }
+.archiveSummary { max-width: 48ch; }
+.archiveArrow { display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid #c9c1bc; border-radius: 50%; font-size: 17px; transition: transform 180ms ease, background 180ms ease; }
+.archiveRow:hover .archiveArrow { transform: rotate(45deg); background: #ffd6e7; border-color: #111; }
+
+/* 상세 페이지는 서술·타임라인·작업 화면을 한 흐름으로 읽는 사례 연구 레이아웃입니다.
+   Case studies combine a clear editorial hierarchy, a process graphic, and real work evidence. */
+.casePage { max-width: 1440px; margin: 0 auto; padding: 0 42px 90px; }
+.caseTopbar { display: flex; justify-content: space-between; align-items: center; min-height: 60px; border-bottom: 1px solid #cfc8c2; color: #625a55; font-size: 11px; font-weight: 800; letter-spacing: .08em; }
+.caseBack { color: inherit; font-size: 13px; letter-spacing: 0; border-bottom: 1px solid #857b74; padding-bottom: 3px; }
+.caseHero { position: relative; min-height: 390px; padding: 48px 2px 46px; border-bottom: 1px solid #bcb5ae; overflow: hidden; }
+.caseHeroMeta { display: flex; justify-content: space-between; gap: 20px; color: #6c625d; font-size: 11px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.caseHero h1 { position: relative; z-index: 1; max-width: 1100px; margin: 62px 0 22px; font-size: clamp(54px, 9.6vw, 132px); line-height: .89; letter-spacing: -.075em; }
+.caseHeroBottom { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(220px, .65fr) minmax(300px, 1fr); gap: 40px; align-items: start; max-width: 930px; }
+.caseHeroBottom strong { font-size: 18px; line-height: 1.35; }
+.caseHeroBottom p { max-width: 62ch; margin: 0; color: #4f4843; font-size: 15px; line-height: 1.75; word-break: keep-all; }
+.caseHeroIndex { position: absolute; right: 15px; bottom: -65px; color: rgba(17,17,17,.045); font-size: 300px; line-height: 1; font-weight: 950; letter-spacing: -.1em; }
+.proofStrip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid #bcb5ae; }
+.proofPoint { position: relative; min-height: 158px; padding: 22px 25px 20px 28px; border-left: 1px solid #d7d1cc; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.proofPoint:first-child { border-left: 0; }
+.proofIndex { position: absolute; top: 20px; right: 20px; color: #a09892; font-size: 10px; font-weight: 900; }
+.proofPoint strong { font-size: clamp(28px, 4vw, 52px); line-height: 1; letter-spacing: -.065em; font-variant-numeric: tabular-nums; }
+.proofPoint b { margin-top: 9px; font-size: 13px; }
+.proofPoint small { margin-top: 5px; color: #716863; font-size: 11px; line-height: 1.45; }
+.caseBody { max-width: 1160px; margin: 0 auto; }
+.workFlow { display: grid; grid-template-columns: 230px 1fr; gap: 40px; padding: 72px 0 60px; border-bottom: 1px solid #d2cbc5; }
+.caseKicker { color: #94516e; font-size: 10px; font-weight: 900; letter-spacing: .12em; }
+.flowHeading h2, .caseSectionHead h2, .caseStoryIntro h2 { margin: 10px 0 0; font-size: clamp(27px, 4vw, 46px); letter-spacing: -.06em; line-height: 1.05; }
+.flowTrack { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 5px 0 0; padding: 0; list-style: none; }
+.flowTrack li { position: relative; display: flex; flex-direction: column; align-items: flex-start; min-height: 100px; padding: 0 18px 0 0; }
+.flowTrack li::before { position: absolute; top: 17px; left: 19px; right: 0; height: 1px; background: #cfc8c2; content: ''; }
+.flowTrack li:last-child::before { display: none; }
+.flowNumber { color: #847a74; font-size: 10px; font-weight: 900; }
+.flowDot { z-index: 1; width: 11px; height: 11px; margin: 11px 0 13px; border: 2px solid #111; border-radius: 50%; background: #f7f4ef; }
+.flowTrack li:first-child .flowDot { background: #ffd6e7; }
+.flowLabel { max-width: 150px; font-size: 13px; font-weight: 800; line-height: 1.4; }
+.caseMedia { padding: 60px 0 72px; border-bottom: 1px solid #d2cbc5; }
+.caseSectionHead { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
+.caseSectionHead h2 { max-width: 700px; }
+.caseNotice { margin: 0 0 20px; padding: 12px 0 12px 16px; border-left: 2px solid #a45277; color: #655852; font-size: 13px; line-height: 1.6; }
+.caseGallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 20px; }
+.caseFigure { min-width: 0; margin: 0; }
+.caseFigureFrame { position: relative; overflow: hidden; background: #e8e4df; }
+.caseImageIndex { position: absolute; z-index: 1; top: 12px; left: 14px; padding: 7px 9px; background: rgba(247,244,239,.95); color: #4a413d; font-size: 9px; font-weight: 900; letter-spacing: .1em; }
+.caseFigureFrame > a { display: block; }
+.caseFigureFrame img { display: block; width: 100%; height: clamp(250px, 36vw, 440px); object-fit: cover; object-position: top center; transition: transform 350ms ease; }
+.caseFigure:hover img { transform: scale(1.02); }
+.caseFigure figcaption { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid #cfc8c2; color: #4d4641; font-size: 12px; line-height: 1.5; }
+.caseFigure figcaption span:last-child { flex: 0 0 auto; color: #9b5675; }
+.caseFigureVideo { grid-column: 1 / -1; }
+.caseFigureVideo .caseFigureFrame { background: #151515; }
+.caseFigureVideo video { display: block; width: 100%; max-height: 660px; aspect-ratio: 16 / 9; object-fit: contain; }
+.caseMedia-glassday .caseGallery { grid-template-columns: minmax(0, 700px); justify-content: center; }
+.caseMedia-glassday .caseFigureFrame img { height: auto; max-height: 850px; object-fit: contain; }
+.widgetShelf { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start; margin-top: 36px; padding-top: 24px; border-top: 1px solid #d2cbc5; }
+.widgetShelfIntro p { margin: 8px 0 0; font-size: 14px; font-weight: 850; }
+.widgetShelfGrid { display: flex; flex-wrap: wrap; gap: 18px 24px; }
+.widgetToken { display: flex; min-width: 88px; flex-direction: column; align-items: center; gap: 8px; color: #514a47; font-size: 10px; font-weight: 800; text-align: center; }
+.widgetToken img { width: 56px; height: 56px; object-fit: contain; image-rendering: pixelated; }
+.caseStory { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 70px; padding: 74px 0 72px; }
+.caseStoryIntro { align-self: start; position: sticky; top: 96px; }
+.caseStoryIntro h2 { margin-bottom: 15px; }
+.caseStoryIntro p { max-width: 28ch; color: #6d645e; font-size: 13px; line-height: 1.65; word-break: keep-all; }
+.storyTimeline { margin: 0; padding: 0; list-style: none; }
+.storyTimeline li { display: grid; grid-template-columns: 42px 12px 1fr; gap: 18px; min-height: 120px; }
+.storyIndex { padding-top: 1px; color: #9a5472; font-size: 12px; font-weight: 900; font-variant-numeric: tabular-nums; }
+.storyRail { position: relative; width: 1px; margin: 0 auto; background: #d2cbc5; }
+.storyRail::before { position: absolute; top: 0; left: -4px; width: 9px; height: 9px; border-radius: 50%; background: #ba7791; content: ''; }
+.storyTimeline li:last-child .storyRail { background: transparent; }
+.storyText { padding: 0 0 34px; }
+.storyText p { max-width: 68ch; margin: 10px 0 0; font-size: 15px; line-height: 1.8; word-break: keep-all; }
+.caseEnd { display: flex; justify-content: space-between; align-items: center; padding: 22px 0 0; border-top: 1px solid #bcb5ae; color: #766d67; font-size: 10px; font-weight: 900; letter-spacing: .12em; }
+.caseEnd a { color: #171311; font-size: 13px; letter-spacing: 0; }
+
+@media (max-width: 760px) {
+  .archiveRow { grid-template-columns: 32px minmax(0, 1fr) 28px; gap: 8px 12px; min-height: 0; padding: 19px 2px; }
+  .archiveDate { grid-column: 2; grid-row: 1; font-size: 10px; }
+  .archiveCopy { grid-column: 2; grid-row: 2; }
+  .archiveCopy h3 { font-size: 21px; }
+  .archiveCopy p { font-size: 12px; }
+  .archiveSummary { grid-column: 2; grid-row: 3; font-size: 12px; }
+  .archiveArrow { grid-column: 3; grid-row: 1 / 4; }
+  .archiveIndex { grid-column: 1; grid-row: 1 / 4; align-self: start; padding-top: 2px; }
+  .casePage { padding: 0 18px 60px; }
+  .caseTopbar { min-height: 54px; font-size: 8px; }
+  .caseBack { font-size: 12px; }
+  .caseHero { min-height: 0; padding: 34px 0 30px; }
+  .caseHeroMeta { font-size: 9px; }
+  .caseHero h1 { margin: 46px 0 20px; font-size: clamp(44px, 13vw, 82px); overflow-wrap: anywhere; }
+  .caseHeroBottom { grid-template-columns: 1fr; gap: 10px; }
+  .caseHeroBottom p { font-size: 14px; }
+  .caseHeroIndex { right: 0; bottom: -25px; font-size: 160px; }
+  .proofPoint { min-height: 126px; padding: 18px 10px; }
+  .proofPoint strong { font-size: clamp(21px, 7vw, 32px); }
+  .proofPoint b { font-size: 11px; }
+  .proofPoint small { font-size: 9px; }
+  .proofIndex { top: 10px; right: 9px; }
+  .workFlow { grid-template-columns: 1fr; gap: 24px; padding: 48px 0 42px; }
+  .flowTrack li { padding-right: 7px; }
+  .flowLabel { font-size: 11px; }
+  .flowTrack li::before { left: 15px; }
+  .caseMedia { padding: 44px 0 48px; }
+  .caseSectionHead { display: block; }
+  .caseSectionHead h2 { margin-top: 8px; }
+  .caseGallery, .caseMedia-glassday .caseGallery { grid-template-columns: 1fr; gap: 24px; }
+  .caseFigureVideo { grid-column: auto; }
+  .caseFigureFrame img { height: auto; max-height: 620px; object-fit: contain; }
+  .widgetShelf { grid-template-columns: 1fr; gap: 16px; }
+  .widgetShelfGrid { gap: 16px; }
+  .caseStory { grid-template-columns: 1fr; gap: 30px; padding: 50px 0; }
+  .caseStoryIntro { position: static; }
+  .caseStoryIntro p { max-width: 48ch; }
+  .storyTimeline li { grid-template-columns: 28px 10px 1fr; gap: 12px; min-height: 110px; }
+  .storyText p { font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .archiveRow, .archiveArrow, .caseFigure img { transition: none; }
+}

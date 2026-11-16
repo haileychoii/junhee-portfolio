@@ -67,8 +67,8 @@ function HomePage() {
           </div>
 
           <div className="grid">
-            {experiences.map((item) => (
-              <Card key={item.id} item={item} />
+            {experiences.map((item, index) => (
+              <Card key={item.id} item={item} index={index} />
             ))}
           </div>
         </section>
@@ -80,8 +80,8 @@ function HomePage() {
           </div>
 
           <div className="grid">
-            {projects.map((item) => (
-              <Card key={item.id} item={item} />
+            {projects.map((item, index) => (
+              <Card key={item.id} item={item} index={index} />
             ))}
           </div>
         </section>
