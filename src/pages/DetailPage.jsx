@@ -1,6 +1,43 @@
 import { Link, useParams } from 'react-router-dom'
 import { allItems } from '../data'
 
+function MediaGallery({ item }) {
+  if (!item.media?.length) return null
+
+  // Read media metadata from src/data.jsx so each project can show its own screenshots and clips.
+  // src/data.jsx의 미디어 정보로 프로젝트별 캡처와 영상을 구성하며, 이미지는 원본 크기로 열 수 있습니다.
+  return (
+    <section className={`detailMedia detailMedia-${item.id}`} aria-labelledby="media-title">
+      <div className="detailSectionHeading">
+        <p className="eyebrow">SCREENS & DEMO / 실제 화면</p>
+        <h2 id="media-title">{item.mediaHeading || 'Project visuals / 프로젝트 화면'}</h2>
+      </div>
+      {item.mediaNotice && <p className="mediaNotice">{item.mediaNotice}</p>}
+      <div className="mediaGrid">
+        {item.media.map((media) => (
+          <figure className={`mediaFigure ${media.type === 'video' ? 'mediaFigureVideo' : ''}`} key={media.src}>
+            <div className="mediaFrame">
+              <span className="mediaLabel">{media.label}</span>
+              {media.type === 'video' ? (
+                <video controls preload="metadata" poster={media.poster} aria-label={media.alt}>
+                  <source src={media.src} type="video/mp4" />
+                  {media.captions && <track kind="captions" src={media.captions} srcLang="ko" label="한국어" default />}
+                  브라우저에서 영상을 재생할 수 없습니다. <a href={media.src}>영상 파일 열기</a>
+                </video>
+              ) : (
+                <a className="mediaImageLink" href={media.src} target="_blank" rel="noreferrer" aria-label={`${media.alt} — 원본 크기로 보기`}>
+                  <img src={media.src} alt={media.alt} loading="lazy" />
+                </a>
+              )}
+            </div>
+            <figcaption>{media.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 function DetailPage() {
   const { id } = useParams()
   const item = allItems.find((data) => data.id === id)
@@ -29,6 +66,8 @@ function DetailPage() {
         <p className="detailKo">{item.ko}</p>
         <p className="detailEn">{item.en}</p>
       </section>
+
+      <MediaGallery item={item} />
 
       <section className="detailContent">
         <div className="detailSectionHeading">

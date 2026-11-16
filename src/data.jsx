@@ -84,6 +84,25 @@ export const projects = [
     subtitle: 'React · TypeScript · Vite · Tauri',
     ko: '일정, 커리어, 학습, 메모와 생활 기록을 위젯으로 모아 관리하는 개인용 대시보드를 기획하고 개발하고 있습니다.',
     en: 'Building a personal dashboard that brings planning, career, study, notes, and daily life into customizable widgets.',
+    // The real app captures are stored in public/projects/glassday and referenced here.
+    // 실제 GlassDay 앱 화면은 public/projects/glassday에 두고, 이 목록에서 상세 갤러리로 연결합니다.
+    mediaHeading: 'GlassDay in use / 실제 화면',
+    media: [
+      {
+        type: 'image',
+        src: '/projects/glassday/tablet-dashboard.png',
+        alt: 'GlassDay 대시보드의 태블릿 와이드 화면. Today Focus, Alert Center, Calendar와 Daily Journal 위젯이 배치되어 있습니다.',
+        caption: '태블릿 와이드 레이아웃 · 여러 위젯을 한 화면에서 조합',
+        label: 'TABLET · 768px',
+      },
+      {
+        type: 'image',
+        src: '/projects/glassday/mobile-dashboard.png',
+        alt: 'GlassDay 대시보드 모바일 화면. Today Focus, Top 3, Calendar, Career 위젯이 세로로 배치되어 있습니다.',
+        caption: '모바일 레이아웃 · 작은 화면에 맞춰 위젯을 세로로 재배치',
+        label: 'MOBILE · 390px',
+      },
+    ],
     details: [
       'Today Focus, Calendar, Career, Study Planner, Timer, Memo, Daily Journal, Health, Money, Mood, Alert Center 등 11개 위젯을 하나의 대시보드에서 조합하도록 구성했습니다.',
       '와이드 데스크톱, 노트북 프레임, 모바일 웹 화면을 지원하고, 모바일 배치 설정을 데스크톱 그리드 설정과 분리해 각 화면에 맞게 정리할 수 있게 했습니다.',
@@ -100,6 +119,42 @@ export const projects = [
     subtitle: 'Related-Party & Sales Rebate Review Workflow',
     ko: '가상기업의 판매장려금 검토 과정을 돕는 업무 프로토타입을 설계·구현했습니다. 공개 시연은 합성 데이터 기반이며, 검토 근거와 담당자 후속 흐름을 보여줍니다.',
     en: 'Designed and built a workflow prototype for related-party and sales-rebate review using synthetic demo data.',
+    // The synthetic-data UI captures, demo video, and Korean captions live in public/projects/procureflow-ax.
+    // 합성 데이터 UI 캡처·시연 영상·한국어 자막은 public/projects/procureflow-ax에 저장해 연결합니다.
+    mediaHeading: 'Product walkthrough / 화면과 시연 영상',
+    mediaNotice: '아래 화면과 영상은 합성 데이터 기반의 프로토타입 시연입니다. 실제 결재·송금 결과나 실제 기업 데이터를 보여주는 자료가 아닙니다.',
+    media: [
+      {
+        type: 'video',
+        src: '/projects/procureflow-ax/walkthrough.mp4',
+        poster: '/projects/procureflow-ax/action-center.png',
+        captions: '/projects/procureflow-ax/walkthrough.ko.vtt',
+        alt: 'ProcureFlow AX 합성 데이터 기반의 전체 사용 흐름 시연 영상',
+        caption: '정상 검토, 정보 정정 영향 미리보기, 증빙 부족 보류 흐름',
+        label: 'WALKTHROUGH · MP4',
+      },
+      {
+        type: 'image',
+        src: '/projects/procureflow-ax/action-center.png',
+        alt: 'ProcureFlow AX Action Center 화면. 관련 거래처 그룹과 월별 검토 후보 금액, 승인 검토 신호가 표시되어 있습니다.',
+        caption: 'Action Center · 검토 우선순위와 그룹 합계 확인',
+        label: '01 · REVIEW',
+      },
+      {
+        type: 'image',
+        src: '/projects/procureflow-ax/case-detail.png',
+        alt: 'ProcureFlow AX 그룹 평가 상세 화면. 합성 거래처 관계와 지급 행의 근거를 확인할 수 있습니다.',
+        caption: 'Case detail · 관계 근거와 월별 지급 행 확인',
+        label: '02 · EVIDENCE',
+      },
+      {
+        type: 'image',
+        src: '/projects/procureflow-ax/impact-preview.png',
+        alt: 'ProcureFlow AX 주소 정정 전후의 거래처 그룹과 승인 검토 신호 비교 화면.',
+        caption: 'Impact preview · 합성 주소 정정 전후 비교',
+        label: '03 · IMPACT',
+      },
+    ],
     details: [
       '삼일PwC AX 인재전쟁 W07 과제에 참가해 「관련 거래처와 판매장려금 지급 검토」 업무를 위한 문제 정의, 요구사항·화면 설계, 프로토타입과 시연 자료를 만들었습니다.',
       '대표자·주소·정산계좌 중 비결측 항목 2개 이상이 일치하면 거래처를 연결하고, 전이적으로 연결된 그룹을 구성하는 규칙을 구현했습니다.',
