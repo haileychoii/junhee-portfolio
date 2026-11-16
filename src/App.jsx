@@ -89,6 +89,24 @@ function HomePage() {
           </div>
         </section>
 
+        {/* 경력과 프로젝트를 관통하는 일하는 방식을 첫 화면에서 설명합니다.
+            Introduce the working style that connects the experience and project sections. */}
+        <section id="about" className="aboutSection" aria-labelledby="about-title">
+          <div className="aboutHeading">
+            <p className="eyebrow">WHO I AM / 나를 소개합니다</p>
+            <h2 id="about-title">정확하게 확인하고,<br />이해하기 쉽게 전하는 사람</h2>
+          </div>
+          <div className="aboutStory">
+            <p>저는 결과값을 그대로 받아들이기보다, 어디서 차이가 생겼는지 먼저 확인합니다. RGA와 써미트에서는 원천 데이터와 상품 기준, 산식을 따라가며 수치를 검증했고, GlassDay와 ProcureFlow AX에서는 복잡한 정보와 업무 흐름이 실제 화면에서 보이도록 구조화했습니다.</p>
+            <p>정확한 분석이 이해하기 쉬운 설명과 다음 행동으로 이어질 때 더 큰 가치를 만든다고 생각합니다. 근거를 꼼꼼히 확인하고, 동료가 안심하고 이어서 활용할 수 있게 정리하는 것이 제 일하는 방식입니다.</p>
+          </div>
+          <div className="workPrinciples">
+            <article><span>01 / TRACE</span><h3>차이의 원인을 추적</h3><p>원천 데이터와 산출 기준을 대사해 숫자가 달라진 이유를 찾습니다.</p></article>
+            <article><span>02 / STRUCTURE</span><h3>복잡한 일을 구조화</h3><p>업무를 기준·단계·예외로 나누어 검토 흐름을 정리합니다.</p></article>
+            <article><span>03 / COMMUNICATE</span><h3>다음 행동이 보이게 전달</h3><p>결과와 근거를 다른 사람이 이해하고 이어서 활용할 수 있게 표현합니다.</p></article>
+          </div>
+        </section>
+
         <section id="experience" className="section">
           <div className="sectionHeader">
             <p>01</p>
