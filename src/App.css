@@ -1673,10 +1673,10 @@ h2 {
   --muted: #737c77;
   --line: #dce1dc;
   --card: #ffffff;
-  --pink: #e9f2ef;
-  --mint: #e4f1eb;
-  --accent: #246b5d;
-  --accent-soft: #e7f1ed;
+  --pink: #f2bfd2;
+  --mint: #f7e4eb;
+  --accent: #a64f75;
+  --accent-soft: #f8e9ef;
 }
 
 html, body, #root { width: 100%; }
@@ -1698,7 +1698,7 @@ body { overflow-x: clip; background: var(--bg); color: var(--text); }
 .nav a:hover { color: var(--accent); }
 .headerSocials { gap: 8px; }
 .headerSocials a, .footerLinks a span {
-  width: 32px; height: 32px; border: 1px solid #cbd4ce; background: transparent;
+  width: 32px; height: 32px; border: 1px solid #e2cbd4; background: transparent;
   color: var(--accent); box-shadow: none; font-size: 12px;
 }
 .headerSocials a:hover, .footerLinks a:hover span { background: var(--accent-soft); border-color: var(--accent); box-shadow: none; }
@@ -1716,7 +1716,7 @@ body { overflow-x: clip; background: var(--bg); color: var(--text); }
 .heroText .introEn { max-width: 44ch; padding: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
 .heroPanel {
   width: 100%; margin: 20px 0 0; padding: 18px 0 18px 22px;
-  border: 0; border-left: 2px solid #9ab9ac; border-radius: 0; background: transparent;
+  border: 0; border-left: 2px solid #d8a3b8; border-radius: 0; background: transparent;
   box-shadow: none; text-align: left;
 }
 .heroPanel p { color: var(--accent); font-size: 10px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
@@ -1727,10 +1727,10 @@ body { overflow-x: clip; background: var(--bg); color: var(--text); }
 .quickLinks { display: flex; flex-wrap: wrap; gap: 9px; border: 0; background: transparent; }
 .quickLinks a, .quickLinks .resumeButton {
   display: inline-flex; min-height: 42px; align-items: center; justify-content: center;
-  padding: 10px 15px; border: 1px solid #d5ddd7; border-radius: 999px;
+  padding: 10px 15px; border: 1px solid #e4d2d9; border-radius: 999px;
   background: #fff; color: #36443e; box-shadow: none; font-size: 12px; font-weight: 720;
 }
-.quickLinks a:hover, .quickLinks .resumeButton:hover { transform: translateY(-1px); border-color: #a7c1b4; background: var(--accent-soft); box-shadow: none; }
+.quickLinks a:hover, .quickLinks .resumeButton:hover { transform: translateY(-1px); border-color: #d6a3b7; background: var(--accent-soft); box-shadow: none; }
 .quickLinks a:active, .quickLinks .resumeButton:active { transform: translateY(0); box-shadow: none; }
 
 /* Use large numerals as quiet evidence; keep the metric row open and readable. */
@@ -1765,10 +1765,18 @@ body { overflow-x: clip; background: var(--bg); color: var(--text); }
 .grid { border-top-color: var(--line); }
 
 /* Keep skills and contact useful without turning them into stacks of bordered tiles. */
-.skillChip { border-color: #d6ded8; background: #fff; color: #425149; box-shadow: none; }
-.skillChip:hover, .skillChip.active { border-color: #9eb9ac; background: var(--accent-soft); color: var(--accent); box-shadow: none; }
-.contactBox { border-color: #cfd8d2; border-radius: 16px; background: #fff; box-shadow: none; }
-.contactBox:hover { background: var(--accent-soft); box-shadow: none; }
+.skillArea { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 28px; align-items: stretch; }
+.skillList { gap: 8px; }
+.skillChip { padding: 9px 13px; border: 1px solid #e4d2d9; border-radius: 999px; background: #fff; color: #51434a; box-shadow: none; font-size: 13px; font-weight: 700; }
+.skillChip:hover, .skillChip.active { border-color: #d6a3b7; background: var(--accent-soft); color: var(--accent); box-shadow: none; transform: none; }
+.skillDescription { padding: 20px 22px; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: none; }
+.skillDescription h3 { margin-bottom: 9px; font-size: clamp(22px, 2.4vw, 30px); }
+.skillDescription p:not(.eyebrow) { font-size: 14px; line-height: 1.65; }
+.contact { padding-bottom: 72px; }
+.contactBox { min-height: 0; padding: 24px; border: 1px solid #e4d2d9; border-radius: 14px; background: #fff; box-shadow: none; gap: 9px; }
+.contactBox > span:not(.contactHoverLabel) { font-size: 19px; }
+.contactBox strong { font-size: clamp(19px, 2.3vw, 28px); }
+.contactBox:hover { transform: translateY(-2px); border-color: #d6a3b7; background: var(--accent-soft); box-shadow: none; }
 .footer { border-top: 1px solid var(--line); }
 
 /* Apply the same restrained palette to project detail pages. */
