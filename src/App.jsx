@@ -21,20 +21,21 @@ function ScrollToTop() {
   const scrollPositions = useRef(new Map())
 
   useLayoutEffect(() => {
+    const positions = scrollPositions.current
     // 상세 페이지로 갈 때는 새 경로를 위에서 열고, 방문했던 경로로 돌아오면 읽던 위치를 복원합니다.
     // Start a new route at the top, then restore its saved position when the visitor returns.
-    const savedPosition = scrollPositions.current.get(pathname)
+    const savedPosition = positions.get(pathname)
     window.scrollTo(0, savedPosition ?? 0)
 
     const rememberPosition = () => {
-      scrollPositions.current.set(pathname, window.scrollY)
+      positions.set(pathname, window.scrollY)
     }
     window.addEventListener('scroll', rememberPosition, { passive: true })
 
     return () => {
       // 경로가 바뀌는 순간 마지막 위치를 저장해, 목록으로 돌아왔을 때 같은 자리를 보여줍니다.
       // Save the final position before leaving so returning restores the same place in the list.
-      scrollPositions.current.set(pathname, window.scrollY)
+      positions.set(pathname, window.scrollY)
       window.removeEventListener('scroll', rememberPosition)
     }
   }, [pathname])
@@ -93,17 +94,17 @@ function HomePage() {
             Introduce the working style that connects the experience and project sections. */}
         <section id="about" className="aboutSection" aria-labelledby="about-title">
           <div className="aboutHeading">
-            <p className="eyebrow">CAREER DIRECTION / 산업 관심과 성장 방향</p>
-            <h2 id="about-title">보험의 불확실성을<br />신뢰할 수 있는 판단으로 바꾸고 싶습니다.</h2>
+            <p className="eyebrow">CAREER DIRECTION / 관심 직무와 성장 방향</p>
+            <h2 id="about-title">계리·데이터 검증 경험을<br />여신 리스크 분석으로 넓히고 싶습니다.</h2>
           </div>
           <div className="aboutStory">
-            <p>보험은 계약과 경험 데이터를 바탕으로 불확실한 위험을 보험료·준비금·재보험 구조로 다루는 산업입니다. 저는 가정이나 데이터의 작은 차이가 보험사의 손익과 리스크 판단에 어떻게 이어지는지 이해하는 데 관심이 있습니다. 그래서 결과 숫자뿐 아니라, 그 뒤의 원천 데이터와 산출 기준까지 확인해 왔습니다.</p>
-            <p>써미트 계리법인과 RGA에서 쌓은 검증 경험을 바탕으로 IFRS17·재보험·경험통계를 더 깊게 다루고, 디지털 보험과 AI가 확장되는 환경에서도 결과를 설명하고 신뢰를 뒷받침할 수 있는 실무형 보험계리·리스크 분석가로 성장하고 싶습니다.</p>
+            <p>가장 우선하는 목표는 카드사·캐피탈사의 여신관리·리스크 분석입니다. 여신 포트폴리오에서 고객군·상품·시장 변화가 건전성과 수익성에 어떻게 연결되는지 분석하고, 그 결과가 심사 기준과 리스크 관리에 어떻게 쓰이는지에 관심이 있습니다.</p>
+            <p>보험계리와 재보험 경험은 보험사 계리직에만 한정된 경력이 아니라, 대량 데이터와 가정·현금흐름·손해 결과를 검증하며 숫자의 신뢰도를 다져온 기반입니다. 이 경험을 신용위험과 여신 데이터 분석으로 확장해, 분석을 심사·포트폴리오 의사결정에 연결하는 리스크 분석가로 성장하고 싶습니다. 금융공기업도 병행해 준비하지만, 현재의 1순위는 카드·캐피탈입니다.</p>
           </div>
           <div className="careerArc" aria-label="산업 관심, 경험, 진로 방향">
-            <article><span>01 / WHY INSURANCE</span><h3>위험을 숫자로 읽는 산업</h3><p>보험 계약·경험 데이터가 가격과 준비금, 리스크 판단으로 연결되는 과정에 관심이 있습니다.</p></article>
-            <article><span>02 / WHAT I BUILD ON</span><h3>계리 검증과 데이터 분석</h3><p>167,598건 준비금 검증과 IFRS17 결산 데이터 검토를 통해 원천·가정·결과를 대사했습니다.</p></article>
-            <article><span>03 / WHERE I’M GOING</span><h3>설명 가능한 계리·리스크 전문성</h3><p>디지털 보험과 AI 활용에서도 결과의 근거와 책임을 이해하는 실무형 계리 전문가를 지향합니다.</p></article>
+            <article><span>01 / TARGET INDUSTRY</span><h3>카드사 · 캐피탈사</h3><p>여신 포트폴리오의 성장과 건전성, 수익성을 함께 살피는 금융 업무를 우선 희망합니다.</p></article>
+            <article><span>02 / ROLE INTEREST</span><h3>신용리스크 · 여신전략</h3><p>위험 신호와 손실 가능성을 분석해 심사 기준과 포트폴리오 관리에 반영하는 역할에 관심이 있습니다.</p></article>
+            <article><span>03 / TRANSFERABLE BASE</span><h3>계리 · 데이터 검증</h3><p>RGA와 써미트에서 쌓은 대량 데이터, 가정, 현금흐름 검증 경험을 신용위험 분석으로 확장합니다.</p></article>
           </div>
         </section>
 

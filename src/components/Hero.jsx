@@ -2,7 +2,7 @@ function Hero() {
   return (
     <section className="hero">
       <div className="heroText">
-        <p className="eyebrow">ACTUARIAL · DATA · WORKFLOW DESIGN</p>
+        <p className="eyebrow">CARD · CAPITAL · CREDIT RISK</p>
 
         <h1>
           Junhee Choi
@@ -11,13 +11,13 @@ function Hero() {
         </h1>
 
         <p className="introKo">
-            보험의 위험을 데이터로 해석하고,
+            여신 데이터를 분석해,
             <br />
-            믿을 수 있는 판단으로 연결합니다.
+            리스크와 수익성의 균형을 찾습니다.
         </p>
 
         <p className="introEn">
-            I turn actuarial and insurance data into decisions people can trust.
+            I analyze lending portfolios to help balance credit risk and profitability.
         </p>
       </div>
 
