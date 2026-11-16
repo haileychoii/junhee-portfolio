@@ -1,6 +1,7 @@
 import './App.css'
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { useLayoutEffect } from 'react'
 
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -12,6 +13,18 @@ import SkillSection from './components/SkillSection'
 import { experiences, projects, skills } from './data'
 
 import Footer from './components/Footer'
+
+// 다른 페이지로 이동하면 이전 페이지의 스크롤 위치를 물려받지 않게 맨 위로 올립니다.
+// Reset scroll on route changes so a new detail page always opens at its beginning.
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
 
 function HomePage() {
   return (
@@ -121,6 +134,7 @@ function HomePage() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/detail/:id" element={<DetailPage />} />
