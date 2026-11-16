@@ -19,21 +19,27 @@ function DetailPage() {
       <Link to="/" className="backLink">← Back to archive</Link>
 
       <section className="detailHero">
-        <p className="eyebrow">{item.eyebrow}</p>
+        <div className="detailMeta">
+          <span className="cardType">{item.category === 'experience' ? 'EXPERIENCE' : 'PROJECT'}</span>
+          <p className="eyebrow">{item.eyebrow}</p>
+        </div>
         <h1>{item.title}</h1>
-        <strong>{item.subtitle}</strong>
+        <strong className="detailSubtitle">{item.subtitle}</strong>
 
         <p className="detailKo">{item.ko}</p>
         <p className="detailEn">{item.en}</p>
       </section>
 
       <section className="detailContent">
-        <h2>Details / 상세 내용</h2>
+        <div className="detailSectionHeading">
+          <p className="eyebrow">WHAT I DID / 주요 기여</p>
+          <h2>Details / 상세 내용</h2>
+        </div>
 
         <div className="detailList">
-          {item.details.map((detail) => (
+          {item.details.map((detail, index) => (
             <div className="detailItem" key={detail}>
-              
+              <span className="detailNumber">{String(index + 1).padStart(2, '0')}</span>
               <p>{detail}</p>
             </div>
           ))}

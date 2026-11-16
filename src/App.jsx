@@ -29,6 +29,37 @@ function HomePage() {
           <a href="#contact">Contact ↗</a>
         </section>
 
+        {/* 숫자로 이력의 규모와 개인 프로젝트의 범위를 먼저 파악할 수 있게 요약합니다.
+            This overview lets visitors scan the scale of the work before reading each story. */}
+        <section className="overview" aria-labelledby="overview-title">
+          <div className="overviewHeading">
+            <p className="eyebrow">AT A GLANCE / 한눈에 보기</p>
+            <h2 id="overview-title">경험을 숫자로 먼저</h2>
+          </div>
+          <div className="overviewGrid">
+            <article className="overviewMetric overviewMetricPink">
+              <span className="metricValue">6<span>개월</span></span>
+              <p>RGA Valuation 인턴십</p>
+              <small>2026.05.11 – 2026.11.10</small>
+            </article>
+            <article className="overviewMetric">
+              <span className="metricValue">167,598<span>건</span></span>
+              <p>실효비금 검증 프로젝트</p>
+              <small>MG새마을금고 프로젝트 전체 계약 수</small>
+            </article>
+            <article className="overviewMetric overviewMetricMint">
+              <span className="metricValue">9,605<span>건</span></span>
+              <p>공제료 분해 검증</p>
+              <small>10개 상품 · 9,604건 ±1 이내</small>
+            </article>
+            <article className="overviewMetric">
+              <span className="metricValue">11<span>개</span></span>
+              <p>GlassDay 대시보드 위젯</p>
+              <small>일정부터 커리어·생활 기록까지</small>
+            </article>
+          </div>
+        </section>
+
         <section id="experience" className="section">
           <div className="sectionHeader">
             <p>01</p>

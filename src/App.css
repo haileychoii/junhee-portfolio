@@ -648,6 +648,126 @@ h2 {
 
 }
 
+/* 숫자 요약은 편집 가능한 일반 CSS로 구성해 가벼운 React 포트폴리오에 맞춥니다.
+   The metrics use plain CSS so the portfolio stays lightweight and easy to maintain. */
+.overview {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.72fr) 2fr;
+  gap: 28px;
+  align-items: stretch;
+  margin-top: 36px;
+  border: 1px solid #d8d2cd;
+  background: #fffdfa;
+}
+
+.overviewHeading {
+  padding: 25px 24px;
+  border-right: 1px solid #d8d2cd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.overviewHeading .eyebrow { margin-bottom: 10px; }
+.overviewHeading h2 {
+  margin: 0;
+  font-size: clamp(23px, 2.5vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
+
+.overviewGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.overviewMetric {
+  min-width: 0;
+  padding: 22px 17px;
+  border-left: 1px solid #e6e0da;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.overviewMetric:first-child { border-left: 0; }
+.overviewMetricPink { background: #fff0f6; }
+.overviewMetricMint { background: #effaf6; }
+.metricValue {
+  color: #111;
+  font-size: clamp(27px, 3vw, 40px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.06em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.metricValue span { margin-left: 3px; font-size: 15px; letter-spacing: -0.02em; }
+.overviewMetric p { margin: 10px 0 5px; font-size: 14px; font-weight: 800; line-height: 1.4; }
+.overviewMetric small { color: var(--muted); font-size: 11px; line-height: 1.45; }
+
+.card { padding: 0; overflow: hidden; border-width: 1px; border-radius: 16px; box-shadow: 4px 4px 0 var(--pink); }
+.cardArticle { min-height: 100%; padding: 22px 24px 18px; display: flex; flex-direction: column; }
+.cardMeta, .detailMeta { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 17px; }
+.cardMeta .eyebrow, .detailMeta .eyebrow { margin: 0; font-size: 12px; text-align: right; }
+.cardType { display: inline-flex; align-items: center; min-height: 24px; padding: 3px 8px; border: 1px solid #c9c1bc; border-radius: 4px; color: #5c5451; font-size: 10px; font-weight: 900; letter-spacing: .07em; white-space: nowrap; }
+.card h3 { margin-bottom: 7px; font-size: clamp(23px, 2.6vw, 30px); line-height: 1.15; }
+.cardSubtitle { margin: 0 0 12px !important; color: #554b4b; font-size: 14px; line-height: 1.45; }
+.cardSummary { max-width: 58ch; margin: 0 0 13px; font-size: 15px; line-height: 1.6 !important; word-break: keep-all; }
+.cardHighlights { display: grid; gap: 7px; margin: 0; padding: 13px 0 15px; border-top: 1px solid #e5ded9; list-style: none; }
+.cardHighlights li { position: relative; padding-left: 15px; color: #514a47; font-size: 12px; line-height: 1.55; word-break: keep-all; }
+.cardHighlights li::before { position: absolute; left: 1px; top: .68em; width: 5px; height: 5px; border-radius: 50%; background: #b44978; content: ''; }
+.cardFooter { margin-top: auto; padding-top: 12px; border-top: 1px solid #e5ded9; display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 800; }
+.cardArrow { display: grid; width: 26px; height: 26px; place-items: center; border: 1px solid #c9c1bc; border-radius: 50%; }
+.cardLink:hover { transform: translateY(-3px); background: #fff; box-shadow: 5px 7px 0 #111; }
+.cardLink:hover .cardArrow { background: var(--pink); border-color: #111; }
+.cardLink:focus-visible, .backLink:focus-visible { outline: 3px solid #8c3d66; outline-offset: 4px; }
+
+.detailMeta { justify-content: center; margin-bottom: 16px; }
+.detailHero { padding: 34px 20px 48px; background: #fffdfa; border: 1px solid #d8d2cd; border-bottom: 1px solid #d8d2cd; }
+.detailHero h1 { margin-bottom: 20px; font-size: clamp(42px, 7vw, 86px); }
+.detailSubtitle { margin-bottom: 22px !important; font-size: clamp(17px, 2.3vw, 25px) !important; }
+.detailKo, .detailEn { max-width: 700px; font-size: 17px; }
+.detailSectionHeading { display: flex; align-items: end; justify-content: space-between; gap: 20px; border-bottom: 1px solid #cfc8c2; }
+.detailSectionHeading .eyebrow { margin-bottom: 17px; }
+.detailContent h2 { margin-bottom: 13px; font-size: clamp(27px, 4vw, 42px); }
+.detailList { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 22px; margin-top: 10px; }
+.detailItem { min-height: 112px; justify-content: flex-start; align-items: flex-start; gap: 16px; padding: 20px 0; border: 0; border-bottom: 1px solid #ddd6d0; border-radius: 0; background: transparent; box-shadow: none; text-align: left; }
+.detailNumber { flex: 0 0 32px; color: #aa5576; font-size: 12px; font-variant-numeric: tabular-nums; }
+.detailItem p { max-width: none; margin: 0; font-size: 14px; line-height: 1.7; text-align: left; }
+
+@media (max-width: 900px) {
+  .overview { grid-template-columns: 1fr; gap: 0; }
+  .overviewHeading { padding: 18px 20px; border-right: 0; border-bottom: 1px solid #d8d2cd; }
+  .overviewGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .overviewMetric:nth-child(3) { border-left: 0; border-top: 1px solid #e6e0da; }
+  .overviewMetric:nth-child(4) { border-top: 1px solid #e6e0da; }
+}
+
+@media (max-width: 640px) {
+  .overview { margin-top: 24px; }
+  .overviewGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .overviewMetric { padding: 16px 13px; }
+  .overviewMetric p { font-size: 12px; }
+  .overviewMetric small { font-size: 10px; }
+  .metricValue { font-size: 29px; }
+  .card { border-radius: 12px; }
+  .cardArticle { padding: 19px 18px 15px; }
+  .cardMeta { align-items: flex-start; }
+  .cardMeta .eyebrow { max-width: 60%; font-size: 10px; }
+  .cardHighlights li { font-size: 12px; }
+  .detailHero { padding: 24px 15px 30px; }
+  .detailHero h1 { text-align: center; }
+  .detailList { grid-template-columns: 1fr; gap: 0; }
+  .detailItem { min-height: auto; padding: 17px 0; }
+  .detailItem p { font-size: 14px; text-align: left; }
+  .detailSectionHeading { display: block; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+
 @media (max-width: 640px) {
   .header {
     align-items: center;
