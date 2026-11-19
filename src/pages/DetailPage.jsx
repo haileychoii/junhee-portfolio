@@ -113,7 +113,9 @@ function DetailPage() {
       <div className="caseHeroMeta"><span>{item.category === 'experience' ? 'CAREER / 경력' : 'PROJECT / 프로젝트'}</span><span>{item.eyebrow}</span></div>
       <h1>{item.title}</h1>
       <div className="caseHeroBottom"><strong>{item.subtitle}</strong><p>{item.ko}</p></div>
-      <span className="caseHeroIndex">{item.category === 'experience' ? '01' : '02'}</span>
+      <span className="caseHeroIndex" aria-label={`경험 ${allItems.findIndex((entry) => entry.id === item.id) + 1}`}>
+        {String(allItems.findIndex((entry) => entry.id === item.id) + 1).padStart(2, '0')}
+      </span>
     </header>
 
     <section className="proofStrip" aria-label="핵심 정보">
